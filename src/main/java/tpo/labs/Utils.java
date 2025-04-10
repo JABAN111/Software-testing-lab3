@@ -23,7 +23,7 @@ public class Utils {
     public Map<String, Object> vars;
     public WebDriverWait wait;
 
-    public void setupDriver(){
+    public void setupDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(25));
@@ -35,30 +35,30 @@ public class Utils {
         driver.get("https://www.meetup.com/ru-RU/");
     }
 
-    public WebDriver getDriver(){
+    public WebDriver getDriver() {
         return driver;
     }
 
-    public WebDriverWait getWaitTime(){
+    public WebDriverWait getWaitTime() {
         return wait;
     }
 
-    public JavascriptExecutor getJsExecutor(){
+    public JavascriptExecutor getJsExecutor() {
         return js;
     }
 
-    public Map<String, Object> getVars(){
+    public Map<String, Object> getVars() {
         return vars;
     }
 
-    public void quitDriver(){
-        if(driver != null){
+    public void quitDriver() {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
 
-     public void switchToFrameWithLocator(By element) {
+    public void switchToFrameWithLocator(By element) {
         List<WebElement> frames = driver.findElements(By.tagName("iframe"));
         for (WebElement frame : frames) {
             driver.switchTo().frame(frame);
@@ -72,6 +72,5 @@ public class Utils {
         }
         throw new NoSuchElementException("Frame с элементом не найден!");
     }
-
 
 }

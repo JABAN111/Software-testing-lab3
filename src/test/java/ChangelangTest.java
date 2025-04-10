@@ -5,47 +5,24 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import tpo.labs.Utils;
-
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
-import java.util.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class ChangelangTest {
   private static WebDriver driver;
   private static Utils utils;
-  private static JavascriptExecutor js;
-
-  // private static WebDriverWait wait;
-  // private static JavascriptExecutor js;
-  // private static HomePage homePage;
 
   @BeforeAll
   public static void setUp() {
     utils = new Utils();
     utils.setupDriver();
     driver = utils.getDriver();
-    // wait = utils.getWaitTime();
-    js = utils.getJsExecutor();
-
-    // homePage = new HomePage(driver);
   }
 
   @AfterAll
@@ -81,7 +58,6 @@ public class ChangelangTest {
     }
     driver.findElement(By.cssSelector(".flex:nth-child(11) .block > circle")).click();
     driver.findElement(By.xpath("//div[3]/div/div/div/div/button")).click();
-
 
   }
 }
